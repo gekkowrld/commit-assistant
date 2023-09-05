@@ -40,7 +40,7 @@ make_git() {
 		IFS=', '
 
 		# Loop over the commands and install each of them if unavailable
-		for install_command in $commands; do
+		for install_command in "$commands"; do
 
 			if ! command -v "$install_command" > /dev/null 2>&1; then
 				sudo "$1" "$install_command"
